@@ -1,0 +1,13 @@
+C:\_test\Girls.Gama2\Girls.Gama2\bin\Debug\netcoreapp3.1\Girls.Gama2.exe
+C:\_test\Girls.Gama2\Girls.Gama2\bin\Debug\netcoreapp3.1\Girls.Gama2.deps.json
+C:\_test\Girls.Gama2\Girls.Gama2\bin\Debug\netcoreapp3.1\Girls.Gama2.runtimeconfig.json
+C:\_test\Girls.Gama2\Girls.Gama2\bin\Debug\netcoreapp3.1\Girls.Gama2.runtimeconfig.dev.json
+C:\_test\Girls.Gama2\Girls.Gama2\bin\Debug\netcoreapp3.1\Girls.Gama2.dll
+C:\_test\Girls.Gama2\Girls.Gama2\bin\Debug\netcoreapp3.1\Girls.Gama2.pdb
+C:\_test\Girls.Gama2\Girls.Gama2\obj\Debug\netcoreapp3.1\Girls.Gama2.csprojAssemblyReference.cache
+C:\_test\Girls.Gama2\Girls.Gama2\obj\Debug\netcoreapp3.1\Girls.Gama2.AssemblyInfoInputs.cache
+C:\_test\Girls.Gama2\Girls.Gama2\obj\Debug\netcoreapp3.1\Girls.Gama2.AssemblyInfo.cs
+C:\_test\Girls.Gama2\Girls.Gama2\obj\Debug\netcoreapp3.1\Girls.Gama2.csproj.CoreCompileInputs.cache
+C:\_test\Girls.Gama2\Girls.Gama2\obj\Debug\netcoreapp3.1\Girls.Gama2.dll
+C:\_test\Girls.Gama2\Girls.Gama2\obj\Debug\netcoreapp3.1\Girls.Gama2.pdb
+C:\_test\Girls.Gama2\Girls.Gama2\obj\Debug\netcoreapp3.1\Girls.Gama2.genruntimeconfig.cache

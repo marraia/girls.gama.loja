@@ -9,6 +9,7 @@ namespace Girls.Gama2
     class Program
     {
         private static List<Boleto> listaBoletos;
+        private static List<Dinheiro> listaAVista;
         static void Main(string[] args)
         {
             listaBoletos = new List<Boleto>();
@@ -49,12 +50,32 @@ namespace Girls.Gama2
             Console.WriteLine("Preeencha uma descrição caso necessário");
             var descricao = Console.ReadLine();
 
-            var boleto = new Boleto(cpf, valor, descricao);
-            boleto.GerarBoleto();
+            Console.WriteLine("====");
+            Console.WriteLine("Compra em qual forma de pagamento?");
+            Console.WriteLine("1-Boleto | 2-Dinheiro");
 
-            Console.WriteLine($"Boleto gerado com sucesso com o número {boleto.CodigoBarra} com data de vencimento para o dia {boleto.DataVencimento} ");
+            var opcao = int.Parse(Console.ReadLine());
 
-            listaBoletos.Add(boleto);
+            if (opcao == 1)
+            {
+                var boleto = new Boleto(cpf, valor, descricao);
+                boleto.GerarBoleto();
+
+                Console.WriteLine($"Boleto gerado com sucesso com o número {boleto.CodigoBarra} com data de vencimento para o dia {boleto.DataVencimento} ");
+
+                listaBoletos.Add(boleto);
+            }
+            else
+            {
+                Console.WriteLine($"========= Á VISTA { valor } =========");
+
+                var dinheiro = new Dinheiro(valor);
+                dinheiro.Pagar();
+
+                Console.WriteLine($"Numero do pagamento {dinheiro.Id} pago no valor: {dinheiro.Valor}");
+
+                listaAVista.Add(dinheiro);
+            }
         }
 
         public static void Pagamento()
@@ -91,8 +112,28 @@ namespace Girls.Gama2
         public static void Relatorio()
         {
             Console.WriteLine("Qual opção de relatório:");
-            Console.WriteLine("1-Pagos | 2-À pagar | 3-Vencidos");
+            Console.WriteLine("1-Boleto | 2-Dinheiro");
 
+
+            var opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao)
+            {
+                case 1:
+                    RelatorioBoleto();
+                    break;
+                case 2:
+                    RelatorioAVista();
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        public static void RelatorioBoleto()
+        {
+            Console.WriteLine("1-Pagos | 2-À pagar | 3-Vencidos");
             var opcao = int.Parse(Console.ReadLine());
 
             switch (opcao)
@@ -109,6 +150,22 @@ namespace Girls.Gama2
                 default:
                     break;
             }
+        }
+
+        public static void RelatorioAVista()
+        {
+            Console.WriteLine("========== Pagamentos à vista ============");
+
+            var boletos = listaAVista
+                            .ToList();
+
+            foreach (var item in boletos)
+            {
+                Console.WriteLine("\n ====");
+                Console.WriteLine($"Pagamento: {item.Id}\nValor:{item.Valor}\nData Pagamento: {item.DataPagamento} ==");
+            }
+
+            Console.WriteLine("========== Pagamentos à vista ============ \n");
         }
 
         public static void BoletosPagos()

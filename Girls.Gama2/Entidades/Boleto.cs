@@ -5,10 +5,10 @@ namespace Girls.Gama2.Entidades
     public class Boleto
     {
         private const int DiasVencimento = 15;
-        private const decimal Juros = 0.10M;
+        private const double Juros = 0.10;
 
         public Boleto(string cpf,
-                        decimal valor,
+                        double valor,
                         string descricao)
         {
             Cpf = cpf;
@@ -20,7 +20,7 @@ namespace Girls.Gama2.Entidades
         }
 
         public Guid CodigoBarra { get; set; }
-        public decimal Valor { get; set; }
+        public double Valor { get; set; }
         public DateTime DataEmissao { get; set; }
         public DateTime DataVencimento { get; set; }
         public DateTime DataPagamento { get; set; }
@@ -32,6 +32,16 @@ namespace Girls.Gama2.Entidades
         {
             CodigoBarra = Guid.NewGuid();
             DataVencimento = DataEmissao.AddDays(DiasVencimento);
+        }
+
+        public bool EstaPago()
+        {
+            return Confirmacao;
+        }
+
+        public bool EstaVencido()
+        {
+            return DataVencimento < DateTime.Now;
         }
 
         public void CalcularJuros()

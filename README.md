@@ -1,6 +1,9 @@
 # girls.gama.loja
-Criar forma de pagamento para dinheiro, à vista!
+Quero dois produtos sendo Televisão e Geladeira
 
-Criar nova opção no sitema, para fazer esse pagamento
+Onde darei desconto na compra de Televisão de 15% do valor do produto
+Onde darei desconto na compra da Geladeira de 15%, mais R$ 100 de desconto do valor do produto
 
-Mostrar relatório com todos os pagamentos em dinheiro
+Isso tudo atrelado ao pagamento boleto e dinheiro.
+
+

@@ -3,7 +3,7 @@ using System;
 
 namespace Girls.Gama2.Entidades
 {
-    public class Dinheiro : Pagamento, IPagar
+    public class Dinheiro : Pagamento
     {
         private const double Desconto = 0.05;
         public Dinheiro(double valor)
@@ -11,22 +11,12 @@ namespace Girls.Gama2.Entidades
             Valor = valor;
         }
 
-        public void Pagar()
+        public override void Pagar()
         {
             var valorDesconto = Valor * Desconto;
             Valor = Valor - valorDesconto;
 
-            DataPagamento = DateTime.Now;
-            Confirmacao = true;
+            base.Pagar();
         }
-
-        //public override void Pagar()
-        //{
-        //    var valorDesconto = Valor * Desconto;
-        //    Valor = Valor - valorDesconto;
-
-        //    base.Pagar();
-        //}
-
     }
 }

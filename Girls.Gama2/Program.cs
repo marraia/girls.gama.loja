@@ -15,6 +15,7 @@ namespace Girls.Gama2
             listaBoletos = new List<Boleto>();
             listaAVista = new List<Dinheiro>();
 
+
             while (true)
             {
                 Console.WriteLine("================== Loja das meninas da Gama Academy ============================");

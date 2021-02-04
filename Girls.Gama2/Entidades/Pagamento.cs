@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Girls.Gama2.Entidades
 {
-    public class Pagamento
+    public abstract class Pagamento
     {
         public Pagamento()
         {

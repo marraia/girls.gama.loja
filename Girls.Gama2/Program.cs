@@ -13,6 +13,7 @@ namespace Girls.Gama2
         static void Main(string[] args)
         {
             listaBoletos = new List<Boleto>();
+            listaAVista = new List<Dinheiro>();
 
             while (true)
             {

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Girls.Gama2.Entidades.Interfaces;
+using System;
 
 namespace Girls.Gama2.Entidades
 {
-    public class Boleto
+    public class Boleto : Pagamento
     {
         private const int DiasVencimento = 15;
         private const double Juros = 0.10;
@@ -14,18 +15,12 @@ namespace Girls.Gama2.Entidades
             Cpf = cpf;
             Valor = valor;
             Descricao = descricao;
-
             DataEmissao = DateTime.Now;
-            Confirmacao = false;
         }
 
         public Guid CodigoBarra { get; set; }
-        public double Valor { get; set; }
-        public DateTime DataEmissao { get; set; }
         public DateTime DataVencimento { get; set; }
-        public DateTime DataPagamento { get; set; }
-        public bool Confirmacao { get; set; }
-        public string Cpf { get; set; }
+        public DateTime DataEmissao { get; set; }
         public string Descricao { get; set; }
 
         public void GerarBoleto()
@@ -50,10 +45,10 @@ namespace Girls.Gama2.Entidades
             Valor += taxa;
         }
 
-        public void Pagar()
-        {
-            DataPagamento = DateTime.Now;
-            Confirmacao = true;
-        }
+        //public void Pagar()
+        //{
+        //    DataPagamento = DateTime.Now;
+        //    Confirmacao = true;
+        //}
     }
 }

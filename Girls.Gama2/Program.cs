@@ -15,6 +15,11 @@ namespace Girls.Gama2
             listaBoletos = new List<Boleto>();
             listaAVista = new List<Dinheiro>();
 
+            var televisao = new Televisao("Samsung Scc", "Samsung", 2500.00, 55, "LED", true, 4);
+            televisao.CalcularPreco();
+
+            var geladeira = new Geladeira("", "", 3500.00, true, 10, true);
+            geladeira.CalcularPreco();
 
             while (true)
             {

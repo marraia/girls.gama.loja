@@ -7,14 +7,15 @@ namespace Girls.Gama2.Entidades
     {
         private const double Desconto = 0.05;
         public Dinheiro(double valor)
+            : base ("", valor)
         {
-            Valor = valor;
         }
 
         public override void Pagar()
         {
             var valorDesconto = Valor * Desconto;
-            Valor = Valor - valorDesconto;
+            var calculoValor = Valor - valorDesconto;
+            ConfirmarValor(calculoValor);
 
             base.Pagar();
         }

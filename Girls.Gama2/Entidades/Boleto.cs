@@ -11,9 +11,8 @@ namespace Girls.Gama2.Entidades
         public Boleto(string cpf,
                         double valor,
                         string descricao)
+            : base(cpf, valor)
         {
-            Cpf = cpf;
-            Valor = valor;
             Descricao = descricao;
             DataEmissao = DateTime.Now;
         }
@@ -42,7 +41,8 @@ namespace Girls.Gama2.Entidades
         public void CalcularJuros()
         {
             var taxa = Valor * Juros;
-            Valor += taxa;
+            var caculoValor = Valor + taxa;
+            ConfirmarValor(caculoValor);
         }
 
         //public void Pagar()
